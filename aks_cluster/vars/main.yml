@@ -1,0 +1,16 @@
+---
+# Define variables needed for AKS login 
+azure_client_id: "your_azure_client_id"
+azure_secret: "your_azure_secret"
+azure_subscription_id: "your_azure_subscription_id"
+azure_tenant: "your_azure_tenant_id"
+
+# Define other variables needed for AKS cluster creation
+resource_group: "your_resource_group_name"
+aks_cluster_name: "your_aks_cluster_name"
+resource_group_location: "your_resource_group_location"
+kubernetes_version: "your_kubernetes_version"
+dns_prefix: "your_dns_prefix"
+node_count: your_node_count
+node_vm_size: "your_node_vm_size"
+os_type: "your_os_type"

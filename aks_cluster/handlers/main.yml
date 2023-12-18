@@ -1,0 +1,20 @@
+---
+# handlers file for aks_cluster
+- name: Create AKS Cluster
+  azure_rm_aks:
+    resource_group: "{{ resource_group }}"
+    name: "{{ aks_cluster_name }}"
+    location: "{{ resource_group_location }}"
+    kubernetes_version: "{{ kubernetes_version }}"
+    dns_prefix: "{{ dns_prefix }}"
+    service_principal:
+      client_id: "{{ azure_client_id }}"
+      client_secret: "{{ azure_secret }}"
+    agent_pool_profiles:
+      - name: default
+        count: 1
+        vm_size: "{{ node_vm_size }}"
+        os_type: "{{ os_type }}"
+        mode: System
+    state: present
+  # delegate_to: localhost
